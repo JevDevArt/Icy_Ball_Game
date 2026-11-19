@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     public void AddPoints(int amount)
     {
         points += amount;
-        Debug.Log("Punkty: " + points);
+        Debug.Log("Points: " + points);
     }
 
     private void OnDrawGizmosSelected()
@@ -79,5 +79,10 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(
             groundCheck.position, groundRadius);
+    }
+
+    public int GetPoints ()
+    {
+        return points;
     }
 }

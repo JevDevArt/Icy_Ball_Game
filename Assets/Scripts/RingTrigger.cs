@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class RingTrigger : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class RingTrigger : MonoBehaviour
     private Animator animator;
     private Collider2D objectCollider;
     private SpriteRenderer spriteRenderer;
+    int value = 1;
 
     private void Start()
     {
@@ -18,19 +20,25 @@ public class RingTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
         {
-            objectCollider.enabled = false;
-            m_AudioSource.Play();
 
-            StartCoroutine(Delay());
+            if (collision.CompareTag("Player"))
+            {
+                PlayerController player = collision.GetComponentInParent<PlayerController>();
+                if (player == null) return;
+                player.AddPoints(value);
+                objectCollider.enabled = false;
+                m_AudioSource.Play();
+
+                StartCoroutine(Delay());
+            }
         }
     }
 
     private IEnumerator Delay()
     {
         animator.Play("ring collected");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.9f);
         Destroy(gameObject);
     }
 }
