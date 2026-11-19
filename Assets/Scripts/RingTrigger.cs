@@ -30,7 +30,7 @@ public class RingTrigger : MonoBehaviour
     private IEnumerator Delay()
     {
         animator.Play("ring collected");
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(0.4f);
         Destroy(gameObject);
     }
 }
