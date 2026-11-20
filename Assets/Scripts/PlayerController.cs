@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundRadius = 5f;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private float fallLimit = -9.0f;
+    [SerializeField] private float fallLimit = -10.0f;
     [SerializeField] private int points;
 
     private Rigidbody2D body;
@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(body.position.y);
         moveInput = 0f;
         if (Keyboard.current == null) return;
 
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
 
         if (body.position.y < fallLimit)
         {
+            
             body.position = startPosition;
             body.linearVelocity = Vector2.zero;
             body.angularVelocity = 0f;
