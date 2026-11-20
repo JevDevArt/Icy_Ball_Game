@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreDisplay
   value: 1
-  player: {fileID: 739960493}
-  ScoreText: {fileID: 101729206}
+  player: {fileID: 0}
+  ScoreText: {fileID: 0}
 --- !u!114 &101729206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +317,94 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101729203}
   m_CullTransparentMesh: 1
+--- !u!1 &151266029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 151266031}
+  - component: {fileID: 151266030}
+  m_Layer: 0
+  m_Name: RestartLvl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &151266030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151266029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b96f5910a2f8a040a41c5dca04acfc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelRestart
+--- !u!4 &151266031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151266029}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.4007, y: 289.7776, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &197626478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197626480}
+  - component: {fileID: 197626479}
+  m_Layer: 0
+  m_Name: NextLvl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &197626479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197626478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a83cd86eba733b45976ab4a49b9d14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NextLevel
+--- !u!4 &197626480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197626478}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 339.4007, y: 289.7776, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220951212
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,14 +991,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df626df814a192142a828aee9efb2563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 10
+  moveSpeed: 5
   jumpSpeed: 9
-  groundCheck: {fileID: 837949109}
-  groundRadius: 4.5
+  groundCheck: {fileID: 0}
+  groundRadius: 5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
-  fallLimit: -7
+    m_Bits: 0
+  fallLimit: -9
   points: 0
 --- !u!4 &739960494
 Transform:
@@ -1321,7 +1409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1265678855536095878, guid: 2b9e96080bc0c2f4abb8fc7b1241c1ce, type: 3}
+  m_Sprite: {fileID: -6782083271709658676, guid: 1365f56afc0c1c146abb1e5548deee85, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4826,7 +4914,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 197626479}
         m_TargetAssemblyTypeName: NextLevel, Assembly-CSharp
         m_MethodName: LoadNextLevel
         m_Mode: 1
@@ -6409,7 +6497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 151266030}
         m_TargetAssemblyTypeName: LevelRestart, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -6604,3 +6692,5 @@ SceneRoots:
   - {fileID: 739960494}
   - {fileID: 2016197433}
   - {fileID: 773007560}
+  - {fileID: 151266031}
+  - {fileID: 197626480}
